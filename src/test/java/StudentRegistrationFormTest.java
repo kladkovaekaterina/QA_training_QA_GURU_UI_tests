@@ -14,7 +14,7 @@ public class StudentRegistrationFormTest { // в названиях классо
        Configuration.browser = "firefox"; // по умолчанию хром
        Configuration.baseUrl = "https://demoqa.com"; // базовый урл здесь, путь до конкретной страницы в тестах
        Configuration.pageLoadStrategy = "eager"; // не ждем окончания загрузки страницы
-       Configuration.holdBrowserOpen = true; // браузер не закрывается после прохождения тестов, перед пушем в мастер ставить !false!
+       //Configuration.holdBrowserOpen = true; // браузер не закрывается после прохождения тестов, перед пушем в мастер ставить !false!
     }
 
     @Test
