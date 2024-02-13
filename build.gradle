@@ -1,10 +1,14 @@
 plugins {
-    id 'java-library'
+    id 'java-library' // язык проекта
 }
 
 repositories {
     mavenCentral()
 }
+/*
+mavenCentral – это сайт, который таким образом зашит -> https://mvnrepository.com/ - хранилище для всех библиотек java в публичном доступе (selenide, junit и др.), ищем в строке поиска «selenide», заходим в нужную версию и во вкладке gradle(short) указано в implementation 'com.codeborne:selenide:7.1.0' как их импортить в проекте
+testImplementation – значит будет работать только в src/test, если нужно в main тоже, то будет просто Implementation
+*/
 
 dependencies {
     testImplementation (
@@ -17,5 +21,5 @@ tasks.withType(JavaCompile) {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform() // JUnit 5
 }
