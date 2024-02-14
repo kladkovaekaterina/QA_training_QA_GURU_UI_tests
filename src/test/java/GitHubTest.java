@@ -13,7 +13,7 @@ public class GitHubTest {
     static void beforeAll() {
         Configuration.browser = "firefox";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
     }
 
     @Test
