@@ -1,7 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -12,7 +12,7 @@ public class StudentRegistrationFormTest { // в названиях классо
     static void beforeAll() {
        Configuration.browserSize = "1920x1080"; // браузер селениум поднимает без всяких плагинов, адблоков и утилит
        Configuration.browser = "firefox"; // по умолчанию хром
-       Configuration.baseUrl = "https://demoqa.com"; // базовый урл здесь, путь до конкретной страницы в тестах
+       Configuration.baseUrl = "https://demoqa.com"; // абсолютный урл
        Configuration.pageLoadStrategy = "eager"; // не ждем окончания загрузки страницы
        //Configuration.holdBrowserOpen = true; // браузер не закрывается после прохождения тестов, перед пушем в мастер ставить !false!
     }
@@ -20,7 +20,7 @@ public class StudentRegistrationFormTest { // в названиях классо
     @Test
     void fillFormTest() {
         // Open form
-        open("/automation-practice-form"); // https://demoqa.com/automation-practice-form
+        open("/automation-practice-form"); // относительный урл, https://demoqa.com/automation-practice-form
         executeJavaScript("$('#fixedban').remove()"); // джаваскриптовый код для скрытия футера и рекламы
         executeJavaScript("$('footer').remove()"); // джаваскриптовый код для скрытия футера и рекламы
 
@@ -72,4 +72,5 @@ public class StudentRegistrationFormTest { // в названиях классо
         $(".table-responsive").shouldHave(text("Ulitsa Pushkina, dom Kolotushkina"));
         $(".table-responsive").shouldHave(text("Uttar Pradesh Agra"));
     }
+
 }
