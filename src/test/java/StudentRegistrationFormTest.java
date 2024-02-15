@@ -17,6 +17,7 @@ public class StudentRegistrationFormTest { // в названиях классо
        //Configuration.holdBrowserOpen = true; // браузер не закрывается после прохождения тестов, перед пушем в мастер ставить !false!
     }
 
+    // HW3
     @Test
     void fillFormTest() {
         // Open form
