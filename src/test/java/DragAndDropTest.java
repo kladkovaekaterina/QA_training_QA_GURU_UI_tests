@@ -13,7 +13,7 @@ public class DragAndDropTest {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = "firefox";
+        Configuration.browser = "edge";
         Configuration.pageLoadStrategy = "eager";
         //Configuration.holdBrowserOpen = true;
     }
@@ -29,7 +29,8 @@ public class DragAndDropTest {
         // Откройте https://the-internet.herokuapp.com/drag_and_drop
         open("https://the-internet.herokuapp.com/drag_and_drop");
         // Перенесите прямоугольник А на место В
-        actions().clickAndHold($(byText("A"))).moveToElement($(byText("B"))).release().perform();
+        actions().clickAndHold($("#column-a")).moveToElement($("#column-b")).release().perform();
+        //или можно так: actions().dragAndDrop($("#column-a"), $("#column-b")).perform();
         // Проверьте, что прямоугольники действительно поменялись
         $("#column-a").shouldHave(text("B"));
     }
