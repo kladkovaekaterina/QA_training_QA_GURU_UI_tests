@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+// HW3
 public class StudentRegistrationFormTest { // в названиях классов с тестами в конце принято писать Test
 
     @BeforeAll
@@ -14,10 +15,9 @@ public class StudentRegistrationFormTest { // в названиях классо
        Configuration.browser = "firefox"; // по умолчанию хром
        Configuration.baseUrl = "https://demoqa.com"; // абсолютный урл
        Configuration.pageLoadStrategy = "eager"; // не ждем окончания загрузки страницы
-       //Configuration.holdBrowserOpen = true; // браузер не закрывается после прохождения тестов, перед пушем в мастер ставить !false!
+       //Configuration.holdBrowserOpen = true; // браузер не закрывается после прохождения тестов, перед пушем в мастер закомментировать
     }
 
-    // HW3
     @Test
     void fillFormTest() {
         // Open form
