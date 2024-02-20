@@ -37,7 +37,7 @@ public class StudentRegistrationFormTest { // в названиях классо
         $("#userNumber").setValue("1234567890");
         // Date of Birth
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOptionContainingText("June"); // выбор из ниспадающего списка
+        $(".react-datepicker__month-select").selectOptionContainingText("June"); // выбор из ниспадающего списка, если в DOM есть select -> option
         $(".react-datepicker__year-select").selectOptionContainingText("1992");
         $(".react-datepicker__day--004").click();
         // Subjects
@@ -49,7 +49,7 @@ public class StudentRegistrationFormTest { // в названиях классо
         // Hobbies
         $("#hobbiesWrapper").$(byText("Music")).click();
         // Picture
-        $("#uploadPicture").uploadFromClasspath("picture.JPG"); // различные файлы, изображения принято хранить в специальной папке resources, в таком случае картинка будет подтягиваться по имени файла из папки resources
+        $("#uploadPicture").uploadFromClasspath("picture.JPG"); // различные файлы, изображения принято хранить в специальной папке resources, в таком случае картинка будет подтягиваться по имени файла из папки resources, применимо для DOM type=file
         // Current Address
         $("#currentAddress").setValue("Ulitsa Pushkina, dom Kolotushkina");
         // State and City
