@@ -9,19 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 // HW5
-public class DragAndDropTest {
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browser = "edge";
-        Configuration.pageLoadStrategy = "eager";
-        //Configuration.holdBrowserOpen = true;
-    }
-
-    @AfterEach
-    void afterEach() {
-        closeWindow();
-    }
+public class DragAndDropTest extends TestBase {
 
     @Test
     void oneWayOfDragAndDropCheck() {

@@ -6,14 +6,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class GitHubTest {
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browser = "firefox";
-        Configuration.pageLoadStrategy = "eager";
-        //Configuration.holdBrowserOpen = true;
-    }
+public class GitHubTest extends TestBase {
 
     // HW4
     @Test

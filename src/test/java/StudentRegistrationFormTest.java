@@ -7,15 +7,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 // HW3
-public class StudentRegistrationFormTest { // в названиях классов с тестами в конце принято писать Test
+public class StudentRegistrationFormTest extends TestBase { // в названиях классов с тестами в конце принято писать Test
 
     @BeforeAll
     static void beforeAll() {
-       Configuration.browserSize = "1920x1080"; // браузер селениум поднимает без всяких плагинов, адблоков и утилит
-       Configuration.browser = "firefox"; // по умолчанию хром
-       Configuration.baseUrl = "https://demoqa.com"; // абсолютный урл
-       Configuration.pageLoadStrategy = "eager"; // не ждем окончания загрузки страницы
-       //Configuration.holdBrowserOpen = true; // браузер не закрывается после прохождения тестов, перед пушем в мастер закомментировать
+        Configuration.baseUrl = "https://demoqa.com"; // абсолютный урл
     }
 
     @Test
