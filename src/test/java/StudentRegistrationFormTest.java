@@ -14,6 +14,7 @@ public class StudentRegistrationFormTest extends TestBase { // в названи
         Configuration.baseUrl = "https://demoqa.com"; // абсолютный урл
     }
 
+    // HW3
     @Test
     void fillFormTest() {
         // Open form
