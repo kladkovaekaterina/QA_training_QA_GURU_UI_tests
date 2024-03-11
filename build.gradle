@@ -1,5 +1,20 @@
 plugins {
     id 'java-library' // язык проекта
+    id 'io.qameta.allure' version '2.11.2' // allure gradle plugin (groovy) -> https://plugins.gradle.org/plugin/io.qameta.allure
+}
+
+allure { // конфигурация из https://github.com/allure-framework/allure-gradle
+    report {
+        version.set("2.25.0") // версия аллюра из https://github.com/allure-framework/allure2
+    }
+    adapter { // конфигурация отвечает за build/allure-results (сборка результатов тестов в json)
+        aspectjWeaver.set(true) // обработка аннотации @Step
+        frameworks {
+            junit5 { // фреймворк
+                adapterVersion.set("2.25.0") // версия интеграции фреймфорка и Allure
+            }
+        }
+    }
 }
 
 repositories {

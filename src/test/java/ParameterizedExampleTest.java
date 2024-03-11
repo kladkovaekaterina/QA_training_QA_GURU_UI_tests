@@ -18,21 +18,21 @@ public class ParameterizedExampleTest extends TestBase {
 
     static Stream<Arguments> websiteShouldDisplayCorrectButtons() {
         return Stream.of(
-                Arguments.of(Language.English, List.of("Quick Summary", "Full Specification", "Contribute")),
-                Arguments.of(Language.Русский, List.of("Главное", "Спецификация", "GitHub"))
+                Arguments.of(Language.EN, List.of("Quick Summary", "Full Specification", "Contribute")),
+                Arguments.of(Language.RU, List.of("Главное", "Спецификация", "GitHub"))
         );
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "При смене языка на {0} должны меняться названия кнопок на {1}")
     @MethodSource
     void websiteShouldDisplayCorrectButtons(Language language, List<String> expectedButtons) {
         open("https://www.conventionalcommits.org/");
         $$(".dropdown__label").find(text("Languages")).click();
-        $$(".dropdown__option").find(text(language.name())).click();
+        $$(".dropdown__option").find(text(language.fullName)).click();
         $$(".welcome__actions a").filter(visible).shouldHave(texts(expectedButtons));
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Поиск по ключевому слову {0} должен выдать несколько результатов")
     @ValueSource(strings = {"Кошелек", "Перевод"})
     void searchResultsShouldNotBeEmpty(String searchQuery) {
         open("https://qiwi.com/");
@@ -41,8 +41,8 @@ public class ParameterizedExampleTest extends TestBase {
         $$(".css-2imjyh div[title]").shouldBe(sizeGreaterThan(0));
     }
 
-    @ParameterizedTest
-    @CsvFileSource(resources = "/searchResultsShouldContainSpecificData.csv")
+    @ParameterizedTest(name = "Заголовок должен содержать имя карточки {1}")
+    @CsvFileSource(resources = "/searchResultsShouldContainSpecificData.csv", numLinesToSkip = 1)
     void searchResultsShouldContainSpecificData(String searchQuery, String expectedText) {
         open("https://qiwi.com/");
         $(".css-9uy14h").click();
